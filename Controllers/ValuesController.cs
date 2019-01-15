@@ -22,7 +22,7 @@ namespace web.Controllers
             MySqlConnection conn = db.GetConnection();
             if(conn == null){
                 Console.WriteLine("접속 오류");
-            }else{
+            }else{ 
                 Console.WriteLine("접속 성공");
             }
             return new string[] { "value1", "value2" };
