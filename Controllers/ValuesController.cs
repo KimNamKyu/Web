@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using Test;
 
 namespace web.Controllers
@@ -17,6 +18,13 @@ namespace web.Controllers
         {
             Class1 c1 = new Class1();
             System.Console.WriteLine(c1.GetInt());
+            Database db = new Database();
+            MySqlConnection conn = db.GetConnection();
+            if(conn == null){
+                Console.WriteLine("접속 오류");
+            }else{
+                Console.WriteLine("접속 성공");
+            }
             return new string[] { "value1", "value2" };
         }
         
